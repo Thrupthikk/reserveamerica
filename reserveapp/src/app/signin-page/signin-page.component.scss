@@ -1,0 +1,46 @@
+.content {
+    display: flex;
+    margin: 100px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    // margin-top: 16px;
+}
+
+p {
+    font-size: 12px;
+}
+
+h4,
+h6 {
+    color: #576166;
+}
+
+.vl {
+    border-left: 1px solid gray;
+    height: 270px;
+    position: absolute;
+    left: 40%;
+    margin-left: -3px;
+    top: 0px;
+}
+
+.leftContainer {
+    position: relative;
+}
+
+.rightContainer {
+    position: relative;
+    left: 45%;
+    bottom: 250px
+}
+
+.spacer {
+    margin-top: 10px;
+}

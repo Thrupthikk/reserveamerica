@@ -1,0 +1,84 @@
+<div class="content">
+    <h4>Sign In</h4>
+    <hr>
+    <div class="leftContainer">
+    <p>
+        <i class="bi bi-lock-fill"></i>
+        We take privacy seriously.
+        <a href=" https://aspiraconnect.com/privacy-policy" target="_blank">Read our Privacy Policy </a>
+    </p>
+    <h6>Existing Customer</h6>
+    <!-- <div class="w-100"></div> -->
+    <div class="spacer">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group col-3">
+                <label for="email">Email</label>
+                <input type="email" [formControlName]="'email'" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
+            </div>
+            <div class="form-group col-3 spacer">
+                <label for="password">Password</label>
+                <input type="password" [formControlName]="'password'" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary col-3" (click)="onSubmit()">
+                <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+                SIGN IN
+            </button>
+        </form>
+        </div>
+        <div class="vl"></div>
+        <div class="rightContainer">
+        <h6 *ngIf="!create">New Customers</h6>
+        <button *ngIf="!create" class="btn btn-primary col-3" style="margin-top: 20px;" (click)="createAcc()">
+            <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+            CREATE AN ACCOUNT
+        </button>
+        <h6 *ngIf="create">Create a New Account</h6>
+        <p *ngIf="create">Enter your information to continue with the registration process.</p>
+        <div class="spacer" *ngIf="create">
+            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                <div class="form-group col-3">
+                    <label for="name">Name</label>
+                    <input type="text" [formControlName]="'name'" class="form-control" [ngClass]="{ 'is-invalid': submittedCreate && g.name.errors }">
+                    <div *ngIf="submittedCreate && g.name.errors" class="invalid-feedback">
+                        <div *ngIf="g.name.errors.required">Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-3 spacer">
+                    <label for="email">Email</label>
+                    <input type="email" [formControlName]="'email'" class="form-control" [ngClass]="{ 'is-invalid': submittedCreate && g.email.errors }">
+                    <div *ngIf="submittedCreate && g.email.errors" class="invalid-feedback">
+                        <div *ngIf="g.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-3 spacer">
+                    <label for="retypeEmail">Retype Email</label>
+                    <input type="email" [formControlName]="'retypeEmail'" class="form-control" [ngClass]="{ 'is-invalid': submittedCreate && g.retypeEmail.errors }">
+                    <div *ngIf="submittedCreate && g.retypeEmail.errors" class="invalid-feedback">
+                        <div *ngIf="g.retypeEmail.errors.required">Retype Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-3 spacer">
+                    <label for="password">Password</label>
+                    <input type="password" [formControlName]="'password'" class="form-control" [ngClass]="{ 'is-invalid': submittedCreate && g.password.errors }">
+                    <div *ngIf="submittedCreate && g.password.errors" class="invalid-feedback">
+                        <div *ngIf="g.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary col-3" (click)="signUp()">
+                    <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+                    CREATE
+                </button>
+            </form>
+            </div>
+    </div>
+    <!-- </div> -->
+</div>
+</div>
