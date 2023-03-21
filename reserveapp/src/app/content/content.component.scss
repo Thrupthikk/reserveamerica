@@ -5,6 +5,17 @@
     max-width: 960px;
     flex-direction: column;
   }
+.card .card-img img{
+  height: 300px;
+  width: 250px;
+}
+.head{
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 36px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 // .bg{
 //     background-image: url(../../assets/background-img.jpg);
 // }

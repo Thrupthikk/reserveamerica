@@ -10,6 +10,11 @@ import { FooterComponent } from './footer/footer.component';
 import { SigninPageComponent } from './signin-page/signin-page.component';
 import { MessageService } from './services/message.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClarityModule } from "@clr/angular";
+import '@cds/core/icon/register.js';
+import { ClarityIcons, userIcon } from '@cds/core/icon';
+
+ClarityIcons.addIcons(userIcon);
 
 @NgModule({
   declarations: [
@@ -23,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClarityModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
